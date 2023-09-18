@@ -4,3 +4,7 @@
 一个python原生界面但是没有图形化界面难以使用，但是aardio集成了很多常用的库平时使用还是很方便的，总得来说是一个小巧很方便的辅助开发工具，本代码主要思路是:使用opencv获取本地图片获取一帧后在tk的label控件上进行显示
 之后重复调用摄像头不断更新获取到的图片将其保存然后通过tk处理后通过tk的label更新函数更新到label控件上
 这样就出现在tk的ui上显示摄像头视频的现象，之后之后再通过opencv的级联分类器进行人脸识别框选即可
+
+t1 = Thread(target=shibie, name='renlian')通过该类将对应的函数"shibie"的内容转为线程进行，
+通过该pic1.configure(image=photo)，configure通知ui线程更新label里面的图片内容
+注意的是ui的loop是不可以运用thread转为子线程运行的因为ui必须运行在主线程里面你可以直接在main里面启动它，要更新内容智能通过通知的函数等通知其更新内容
